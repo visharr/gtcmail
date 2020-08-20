@@ -1,0 +1,22 @@
+<div class="col s9 " style="margin-left:5%;margin-top:30px;min-height: 65vh;width:90%;border:rgba(123, 125, 128, 0.222) 1px solid">
+  <form [formGroup]="compose" (ngSubmit)="onSubmit()">
+    <div class="row ">
+      <div class="input-field form-group col s11" style="margin-left: 30px;margin-top:20px">
+        <i class="fas fa-user prefix"></i>
+        <input id="to" type="text" id="to" [ngClass]="!validReceiver===true?'invalidReceiver':'validUser'" formControlName="to" class="form-control">
+        <label for="to">To</label>
+      </div>
+      <div class="input-field form-group col s11" style="margin-left: 30px;">
+        <i class="fas fa-envelope prefix"></i>
+        <input type="text" id="subject" formControlName="subject" data-length="80" class=" form-control ">
+        <label for="subject">Subject</label>
+      </div>
+      <div class="input-field form-group col s11" style="margin-left: 30px; ">
+        <i class="fas fa-comment-alt prefix "></i>
+        <textarea id="message" formControlName="message" class="materialize-textarea form-control "></textarea>
+        <label for="message">Message</label>
+      </div>
+      <button class="btn btn-primary  right " style="margin-right:30px;position: relative " type="submit " [disabled]="(!compose.valid)">Send</button>
+    </div>
+  </form>
+</div>

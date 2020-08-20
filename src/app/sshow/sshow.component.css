@@ -1,0 +1,111 @@
+#wrapper {
+	width: 100%;
+	min-width: 900px;
+	height: 500px;
+    margin: auto;
+    text-align: middle;
+	position: relative;	
+}
+
+.sshow{
+   margin-bottom: 100px;
+    width: 100%;   
+}
+
+#carousel img {
+	display: block;
+	float: left;
+}
+#prev {
+	background-color: rgba(255, 255, 255, 0.7);
+	display: block;
+	height: 450px;
+	width: 50%;
+	top: 0;
+	position: absolute;
+}
+#next {
+	background-color: rgba(255, 255, 255, 0.7);
+	display: block;
+	height: 450px;
+	width: 50%;
+	top: 0;
+	position: absolute;
+}
+#prev:hover, #next:hover {
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+#prev {
+    left: 0px;
+    width: 10%;
+}
+#next {
+        right:-227;
+        right: 0px;
+    width: 10%;
+}
+#pager {
+	margin-left: -470px;
+	position: absolute;
+	left: 50%;
+	bottom: 10px;
+}
+#pager a {
+	border: 2px solid #fff;
+	border-radius: 10px;
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin: 0 5px 0 0;
+}
+#pager a:hover {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+#pager a span {
+	display: none;
+}
+#pager a.selected {
+	background-color: #fff;
+}
+
+#wrap {
+    width: 1106px;
+    height: 500px;
+    margin: auto;    
+    overflow: hidden;
+    position: relative;
+    left: auto;
+    top: 160px;
+}
+#wrap * {
+    color: #ccc;
+}
+
+#wrap .igg {
+    display: block;
+    float: left;
+    width: 275px;
+    height: 250px;
+    margin: 0 1px 1px 0;
+}
+#wrap .igg img {
+    display: block;
+}
+#wrap .igg div {
+    background-color: black;
+    width: 215px;
+    height: 250px;
+    padding: 0 30px;
+}
+#wrap .igg div h3 {
+    font-size: 20px;
+    line-height: 50px;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+}
+#wrap .igg div p {
+    height: 160px;
+    margin: 0;
+}

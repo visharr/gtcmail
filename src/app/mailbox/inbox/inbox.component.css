@@ -1,0 +1,50 @@
+.raw:hover{
+    border-left:3px rgb(0, 181, 253) solid;     
+}
+.raw{
+    border-left:3px rgba(63, 100, 114, 0) solid;            
+}
+
+table{
+    width:100%;    
+}
+
+td { 
+    border-bottom:solid 1px rgba(129, 116, 116, 0.548);
+    background-color: rgba(196, 207, 206, 0.089);    
+    padding-left:15px;
+}
+
+tr:nth-child(even) {
+    /* background-color: rgba(0, 0, 0, 0.10); */
+}
+tr:nth-child(odd) {
+    /* background-color: rgba(0, 0, 0, 0.250); */
+}
+
+th{
+    padding-left:15px;
+    border-bottom:solid 1px rgb(0, 0, 0);
+}
+.profile:hover{
+    color:rgb(107, 94, 192)!important;
+    /* font-weight: bolder;     */
+}
+/* .profile{
+    color:rgb(73, 97, 121)!important; 
+     font-weight: bolder!important;     
+} */
+.read{ 
+    
+    color:rgb(100, 98, 98);
+}
+.unread{
+    
+    font-size:16px;
+    color:rgb(0, 0, 0);
+} 
+
+
+.selectedd{
+    background:rgba(189, 198, 202, 0.281)
+}

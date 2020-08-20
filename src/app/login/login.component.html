@@ -1,0 +1,49 @@
+<!-- modal button -->
+<a class="waves-effect modal-trigger" href="#loginModal">Login</a>
+
+<!-- login modal -->
+<div id="loginModal" class="modal col s8 " style="max-height: 100vh;" [style.border]="enterPassword ? '2px solid #2cbdc2' : '1px solid #2cbdc2'">
+
+  <div class="modal-content">
+    <!-- <h4 style="text-align: center">Login</h4> -->
+    <br/>
+    <div class="container">
+
+      <!-- IMAGE -->
+      <div style="text-align: center;height: 200px;  max-width:360px; margin-left:auto; margin-right: auto ;overflow: hidden; "
+        [style.border]="enterPassword ? '1px solid #2cbdc2' : '1px solid #dbe8e9'">
+        <!-- <img src="../assets/none.png" alt="" *ngIf="enterUser" align="middle" style=" text-align: center;height: 220px;max-width: 360px;"> -->
+        <img src="{{preview}}" *ngIf="enterPassword" align="middle" style=" width:auto;max-height:220px;max-width: 360px;">
+      </div>
+      <br/>
+      <br/>
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+
+          <!-- LOGIN FORM -->
+          <form [formGroup]="loginForm">
+
+            <div class="form-group" *ngIf="enterUser">
+              <label for="Username/Email">Username/Email</label>
+              <input id="user" type="text" (keydown)="onKeydown($event)" [ngClass]="{validUser : validUser===true}" id="user" formControlName="user"
+                class="form-control">
+            </div>
+
+            <div class="form-group" *ngIf="enterPassword">
+              <label for="password">Password</label>
+              <input id="password" type="password" id="password" formControlName="password" class="form-control">
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer" style="text-align: center">
+    <button *ngIf="enterUser" class="btn btn-primary  waves-effect waves-green btn-flat" (click)="next()">Next</button>
+    <button *ngIf="enterPassword" style="text-align: left!important" class=" btn  waves-effect waves-green btn-flat" (click)="back()">Back</button>
+    <button *ngIf="enterPassword" id="submit" style="text-align: center" class="btn btn-primary  waves-effect waves-green btn-flat"
+    (click)="onSubmit()">Login</button>
+      <!-- (click)="onSubmit()" [disabled]="((!loginForm.valid)&&loginForm.touched)||!this.validUser">Login</button> -->
+     
+  </div>

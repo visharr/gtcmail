@@ -1,0 +1,10 @@
+.user:hover{
+    color:rgb(53, 129, 161)!important;
+}
+
+#delete {
+    width: 25%!important;
+    min-width: 300px;
+    
+  }
+  

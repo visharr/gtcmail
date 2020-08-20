@@ -1,0 +1,129 @@
+<!-- modal button -->
+<a class="waves-effect modal-trigger"  href="#registerModal">Register</a>
+
+
+<div id="registerModal" class="modal col s8  " style="width:90%;max-height: 100vh;" [style.border]="enterPassword ? '2px solid #2cbdc2' : '1px solid #2cbdc2'">
+
+
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <!-- Name -->
+    <div class="row" style="margin-top:23px">
+      <div class="input-field offset-s1 col s5 form-group">
+        <input id="first_name" formControlName="first_name" class="form-control validi" type="text">
+        <label for="first_name">First Name </label>
+      </div>
+      <div class="input-field  col s5 form-group">
+        <input id="last_name" type="text" formControlName="last_name" class="form-control validi">
+        <label for="last_name">Last Name</label>
+      </div>
+   
+
+    <!-- Password -->
+    
+      <div class="input-field offset-s1 col s5 form-group">
+        <input id="password" type="password" formControlName="password" class="form-control validi">
+        <label for="password">Password</label>
+      </div>
+
+      <div class="input-field col s5  form-group">
+        <input id="repassword" type="password" formControlName="repassword" class=" form-control " [ngClass]="{validi : this.signupForm.get('password').value===this.signupForm.get('repassword').value,invalidi :this.signupForm.get('password').value!==this.signupForm.get('repassword').value}">
+        <label for="repassword">Confirm Password</label>
+      </div>
+   
+
+    <!-- Email -->
+    
+      <div class="input-field col s10 offset-s1 form-group">
+        <input type="email" formControlName="email" [ngClass]="{validi : validEmail===true,invalidi : validEmail===false}" class="form-control ">
+        <label for="email">Email</label>
+        <!-- <span *ngIf="validEmail===false" style=" color:red;font-size: 11px" class="form-text text-muted">*Email is already taken</span> -->
+      </div>
+    </div>
+
+    <!-- Username -->
+    <div class="row">
+      <div class="input-field col s5 offset-s1 form-group">
+        <input id="username" type="text" formControlName="username" [ngClass]="{validi : validUser===true,invalidi : validUser===false}"
+          class="form-control ">
+        <label for="username">Username</label>
+        <!-- <span *ngIf="validUser===false" style=" color:red;font-size: 11px" class="form-text text-muted">*Username is already taken</span> -->
+      </div>
+
+
+      <!-- Birthdate -->
+
+      <div class="input-field col s5 form-group">
+        <input id="bday" type="text" formControlName="birthday" class="form-control validi datepicker ">
+        <label for="bday">Birthday</label>
+      </div>
+    </div>
+
+    <!-- Branch -->
+    <div class="row">
+      <div class="input-field col offset-s1 s3 form-group">
+        <select class="icons " formControlName="branch">
+
+          <option value="ce" class="left">CE
+            <i class="fas fa-building right"></i>
+          </option>
+          <option value="cs" selected class="left"> CSE
+            <i class="fas fa-code right"></i>
+          </option>
+          <option value="ee" class="left">EE
+            <i class="fas fa-bolt right"></i>
+          </option>
+          <option value="ec" class="left">EC
+            <i class="fas fa-wifi right"></i>
+          </option>
+          <option value="me" class="left">ME
+            <i class="fas fa-wrench right"></i>
+          </option>
+        </select>
+        <label>Branch</label>
+      </div>
+
+
+      <!-- Year -->
+
+      <div class="input-field col s2 form-group">
+        <select class="validi" formControlName="year">
+
+          <option value="I" selected>I</option>
+          <option value="II">II</option>
+          <option value="III">III</option>
+          <option value="IV">IV</option>
+        </select>
+        <label>Year</label>
+      </div>
+
+
+      <!-- Sex -->
+
+
+      <div class="input-field col s2 form-group offset-s1">
+        <label>
+          <input formControlName="sex" class="with-gap" value="male" type="radio" />
+          <span>
+            <i class="fas fa-male  fa-lg " style="color:skyblue"></i> Male
+          </span>
+        </label>
+      </div>
+
+      <div class="input-field col s2 form-group">
+        <label>
+          <input formControlName="sex" class="with-gap" value="female" type="radio" />
+          <span>
+            <i class="fas fa-female fa-lg  " style="color:pink"></i> Female
+          </span>
+        </label>
+      </div>
+      
+    </div>
+    <div class="row offset-s1 col" style="text-align:center">
+        <button class="btn btn-primary modal-close waves-effect waves-green btn-flat" type="submit" [disabled]="((!signupForm.valid)||!validEmail||!validUser)">Submit</button>
+      </div>
+
+
+  </form>
+
+</div>

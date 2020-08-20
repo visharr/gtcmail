@@ -1,0 +1,73 @@
+<!-- sidenav -->
+<div >
+
+  <ul id="slide-out" class="sidenav sidenav-fixed">
+    <li *ngIf="loginservice.user">
+      <div
+        style="text-align: center;max-height: 30vh;  max-width:40vh;border: 0px solid #2cbdc2;margin:auto;margin-top:25px; ">
+        <img src="{{loginservice.user.pfp}}" align="middle"
+          style=" max-height:30vh;max-width: 40vh;border: 1px solid #929c9c">
+
+
+      </div>
+      <span routerLink="/profile/edit" class="btn" style="float: right;position:relative;top:-229px;right:30px;width: 35px;
+      ;height: 35px">
+        <i class="far  fa-2x  fa-edit" style="margin:auto;width: 35px;
+        margin-left: -15px;;
+        ;height: 35px;"></i>
+      </span>
+    </li>
+    <li style="text-align: center">
+      <strong *ngIf="loginservice.user" style="font-size: 20px;color:rgb(16, 17, 17)">{{loginservice.user.first_name}}
+        {{loginservice.user.last_name}}</strong>
+    </li>
+
+    <li>
+      <div class="divider"></div>
+    </li>
+    <li>
+      <a routerLink="compose" class="vi waves-effect">
+        <i class="fas new badge fa-pencil-alt fa-lg black-text"></i>Compose</a>
+    </li>
+
+    <li>
+      <a routerLink="inbox" routerLinkActive="selectedd" class="waves-effect vi">
+        <i class="fas fa-envelope black-text fa-lg"></i>Inbox
+        <span *ngIf="this.mailboxService.unread>0" class="new blue badge"> {{this.mailboxService.unread}}</span>
+      </a>
+    </li>
+
+    <li>
+      <a routerLink="sent" routerLinkActive="selectedd" class="waves-effect vi">
+        <i class="material-icons black-text">send</i>Sent</a>
+    </li>
+    <li>
+      <div class="divider"></div>
+    </li>
+
+  </ul>
+  <a href="#" data-target="slide-out" style="top: 60px!important;position: relative;" class="sidenav-trigger">
+    <i class="material-icons">menu</i>
+  </a>
+
+  <div class="row">
+    <!-- routerOutlet -->
+    <div class="col xl8 l7 s9 m9 offset-m1 offset-s1 offset-xl3 offset-l4"
+      style="height: 76vh; background:rgba(255, 255, 255, 0.911); position: fixed; overflow:scroll;top:70px; border:1px solid rgba(0, 0, 0, 0.137)">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- panel -->
+    <div class="col l1 m1 s1 offset-l10 offset-s10 offset-m10 "
+      style="height: 76vh; right:0px;position: fixed; top:70px; ">
+    </div>
+  </div>
+
+</div>
+
+<!-- news -->
+<div class="row">
+  <div class="col s12" style="bottom: 1px;position: fixed;height: 9vh;;">
+    <app-news></app-news>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+#loginModal {
+  width: 25%!important;
+  min-width: 300px;
+  min-height:75vh!important;
+  
+}
+
+.modal .ng-dirty.validUser{
+  border-bottom:1px solid green;
+}

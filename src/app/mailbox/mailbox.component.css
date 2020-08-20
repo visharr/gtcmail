@@ -1,0 +1,30 @@
+::-webkit-scrollbar {
+  width: 1px;
+}
+::-webkit-scrollbar-thumb {
+background-color: rgb(4, 3, 12);
+}
+
+@media (min-width: 992px) {
+  .sidenav{
+    height: 78vh!important;
+    top:60px!important;
+    overflow: hidden;
+  }
+  .sidenav-trigger{
+    visibility: hidden;
+  }
+}
+
+/* sidenav links */
+.vi{
+  color:rgb(7, 3, 26)!important;
+  font-size:24!important;
+  font-weight:530!important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif!important;
+}
+
+.sidenav{
+  border-right:2px solid rgba(202, 202, 202, 0.658);
+  box-shadow: none;
+}

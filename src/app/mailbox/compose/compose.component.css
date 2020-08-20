@@ -1,0 +1,11 @@
+   input.ng-invalid.ng-dirty{
+    border-bottom:1px solid red;
+  }  
+
+  .invalidReceiver.ng-dirty{
+    border-bottom:1px solid red!important;
+  }
+  .validUser.ng-dirty{
+    border-bottom:1px solid green!important;
+  }
+  

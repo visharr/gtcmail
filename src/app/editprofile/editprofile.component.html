@@ -1,0 +1,20 @@
+<p>
+  editprofile works!
+</p>
+<input type="file"
+ (change)="onFileSelected($event);previewSelected($event.target.files)"
+ #imageInput
+ style="display: none">
+<button type ="button" (click)="imageInput.click()">Select File</button>
+<button type ="button" (click)="upload()">Upload</button>
+<img *ngIf="imageURL" [src]="imageURL" style="max-width: 100px;max-height: 100px;">
+
+
+
+<img *ngIf="testurl" style="max-width: 100px;" [src]="sanitize(testurl)">
+
+<button type ="button" (click)="getpfp()">View</button>
+
+<button type ="button" (click)="deletepfp()">Deletepfp</button>
+
+<button type ="button" (click)="deleteProfile()">Delete Account</button>

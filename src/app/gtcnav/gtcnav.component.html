@@ -1,0 +1,16 @@
+<!-- navbar -->
+<div class="topnav" id="myTopnav">
+  <a routerLink="" class="waves-effect" style="float: left;width: 75px; margin-top:-10px;opacity: 0.8;height: 60px ">
+    <img src="../assets/logo.png" alt="Home" style=" margin-left: -10px; width:45px">
+  </a>
+
+  <!-- <a routerLink="signup" *ngIf="!loginService.loggedIn">Register</a> -->
+  <app-signup *ngIf="!loginService.loggedIn"></app-signup>
+  <app-login *ngIf="!loginService.loggedIn"></app-login>
+  <!-- <a class="waves-effect   modal-trigger" *ngIf="!loginService.loggedIn" href="#loginModal">Login</a> -->
+  <a routerLink="" (click)="loginService.logout()" *ngIf="loginService.loggedIn" style="background-color:rgba(224, 1, 1, 0.199)">Logout</a>
+  <!-- <a routerLink="gallery" class=" " routerLinkActive="selected">Gallery</a> -->
+  <a routerLink="mailbox" routerLinkActive="selected" *ngIf="loginService.loggedIn">MailBox</a>
+  <a routerLink="users" class=" " routerLinkActive="selected" *ngIf="loginService.loggedIn">Users</a>
+  <a routerLink="" routerLinkActive="selected" [routerLinkActiveOptions]="{exact:true}">Home</a>
+</div>

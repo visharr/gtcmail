@@ -1,0 +1,59 @@
+<div class="all"></div>
+<div class="flip-container centered">
+  <div class="flipper">
+    <div class="front " style="text-align: center; ">
+      <img style="height:100%" src="{{preview}}">
+    </div>
+    <div class="back">
+      <h1>{{user.first_name+" "+ user.last_name}}
+        <strong>
+          <i *ngIf="user.branch==='ce'" class="fas fa-building " style="padding-left: 20px"></i>
+          <i *ngIf="user.branch==='me'" class="fas fa-wrench " style="padding-left: 20px"></i>
+          <i *ngIf="user.branch==='cs'" class="fas fa-code " style="padding-left: 20px"></i>
+          <i *ngIf="user.branch==='ee'" class="fas fa-bolt " style="padding-left: 20px"></i>
+          <i *ngIf="user.branch==='ec'" class="fas fa-wifi " style="padding-left: 20px"></i>
+        </strong>
+      </h1>
+
+      <div class="icon-group font-a-icons">
+        <span class="bold">{{user.username}}</span>
+      </div>
+      <hr/>
+      <div class="icon-group font-a-icons">
+        <span class="bold">{{user.year}}</span>
+        <span class="contact">year</span>
+
+      </div>
+      <div class="font-a-icons">
+        <div class="icon-group">
+          <span class="bold">Branch: </span>
+          <span class="contact" *ngIf="user.branch==='cs'">Computer Science</span>
+          <span class="contact" *ngIf="user.branch==='ee'">Electrical Engineering</span>
+          <span class="contact" *ngIf="user.branch==='ce'">Civil Engineering</span>
+          <span class="contact" *ngIf="user.branch==='me'">Mechanical Engineering</span>
+          <span class="contact" *ngIf="user.branch==='ec'">Electroncs and Communication Engineering</span>
+          <div class="icon-group">
+            <br/>
+            <span *ngIf="user.sex==='female'" class="bold">
+              <i class="fas fa-female fa-lg" style="color:pink"></i>
+            </span>
+            <span class="bold">
+              <i class="fas fa-male fa-lg" *ngIf="user.sex==='male'" style="color:skyblue;padding-right: 10px"></i>{{user.birthday|date:'mediumDate'}}
+            </span>
+          </div>
+        </div>
+
+        <div class="social">
+
+          <i *ngIf="user.codepen&&user.codepen!=''" class="fab fa-codepen fa-2x" style="color:rgb(0, 0, 0)"></i>
+          <i *ngIf="user.insta&&user.insta!=''" class="fab fa-instagram fa-2x" style="color:rgb(212, 16, 212)"></i>
+          <i *ngIf="user.google&&user.google!=''" class="fab fa-google fa-2x" style="color:orangered"></i>
+          <i *ngIf="user.linkedin&&user.linkedin!=''" class="fab fa-linkedin fa-2x" style="color:rgb(29, 91, 150)"></i>
+          <i *ngIf="user.github&&user.github!=''" class="fab fa-github fa-2x" style="color:black"></i>
+          <i *ngIf="user.fb&&user.fb!=''" class="fab fa-facebook-f fa-2x" style="color:rgb(32, 128, 253)"></i>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
